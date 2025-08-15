@@ -181,6 +181,28 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+For Mac (w/ uv):
+Test with `3.10` or `3.11`
+```bash
+# When app doesn't work with errors about pillow and tcl/tk, re-install python with explicit linking info: 
+# cf.
+# uv pip uninstall pillow 
+# uv pip install --no-binary :all: Pillow
+
+brew reinstall python-tk@3.11
+brew deps --tree python-tk@3.11 # For check
+
+pyenv uninstall 3.11.13
+pyenv install 3.11
+
+# Ensure you use the installed Python 3.11
+uv venv --python 3.11
+source venv/bin/activate
+uv pip install -r requirements.txt --index-strategy unsafe-best-match
+# Then, re-run
+python run.py
+```
+
 **Run:** If you don't have a GPU, you can run Deep-Live-Cam using `python run.py`. Note that initial execution will download models (~300MB).
 
 ### GPU Acceleration
