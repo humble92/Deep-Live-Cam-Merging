@@ -69,8 +69,8 @@ if __name__ == "__main__":
 
     # Create the son image
     son_output_path = os.path.join(args.output_dir, "son.jpg")
-    swap_with_strength(args.mother_image, args.father_image, son_output_path, 0.7)
+    swap_with_strength(args.mother_image, args.father_image, son_output_path, 0.5)
 
     # Create the daughter image
     daughter_output_path = os.path.join(args.output_dir, "daughter.jpg")
-    swap_with_strength(args.father_image, args.mother_image, daughter_output_path, 0.7)
+    swap_with_strength(args.father_image, args.mother_image, daughter_output_path, 0.5)

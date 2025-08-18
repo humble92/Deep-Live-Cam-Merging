@@ -48,7 +48,7 @@ def merge_faces(father_image_path: str, mother_image_path: str, output_dir: str)
 
 
     # --- Create the "son" ---
-    son_embedding = (father_face.normed_embedding * 0.6) + (mother_face.normed_embedding * 0.4)
+    son_embedding = (father_face.normed_embedding * 0.5) + (mother_face.normed_embedding * 0.5)
     son_face = Face(
         bounding_box=father_face.bounding_box,
         landmark_2d_106=father_face.landmark_2d_106,
@@ -67,7 +67,7 @@ def merge_faces(father_image_path: str, mother_image_path: str, output_dir: str)
     print(f"Son image saved to {son_output_path}")
 
     # --- Create the "daughter" ---
-    daughter_embedding = (father_face.normed_embedding * 0.6) + (mother_face.normed_embedding * 0.4)
+    daughter_embedding = (father_face.normed_embedding * 0.5) + (mother_face.normed_embedding * 0.5)
     daughter_face = Face(
         bounding_box=mother_face.bounding_box,
         landmark_2d_106=mother_face.landmark_2d_106,
